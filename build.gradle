@@ -1,0 +1,86 @@
+buildscript {
+    ext.springRepo = 'http://repo.spring.io/libs-release'
+    repositories {
+        mavenLocal()
+        maven { url springRepo }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE"
+        classpath 'org.springframework:springloaded:1.2.0.RELEASE'
+    }
+}
+
+def vJavaLang = '1.8'
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'idea'
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+sourceCompatibility = 1.8
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+targetCompatibility = vJavaLang
+sourceCompatibility = vJavaLang
+
+repositories {
+    maven { url 'http://maven.aliyun.com/mvn/repository/' }
+    mavenLocal()
+    maven { url springRepo }
+}
+
+springBoot {
+    mainClass = 'awebbs.AwebbsApplication'
+}
+
+dependencies {
+    // Json
+    compile 'com.ruijc:spring-boot-starter-fastjson:1.2.0',
+            'com.alibaba:fastjson:1.2.28'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc'
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version:'1.5.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version:'1.5.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version:'1.5.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version:'1.5.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version:'1.5.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.5.2.RELEASE'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.2.RELEASE') 
+
+    // Mock http interactions
+    testCompile "org.springframework:spring-test"
+    testCompile "org.springframework.boot:spring-boot-test"
+
+    // Common libraries
+    compile group: 'org.jetbrains', name: 'annotations', version: '13.0'
+    compile group: 'net.sf.ehcache', name: 'ehcache', version:'2.10.3'
+    compile group: 'com.google.guava', name: 'guava', version:'19.0'
+    compile group: 'org.ocpsoft.prettytime', name: 'prettytime', version:'4.0.1.Final'
+    compile group: 'org.pegdown', name: 'pegdown', version:'1.6.0'
+    compile group: 'org.jsoup', name: 'jsoup', version:'1.9.2'
+
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.2.RELEASE')
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'junit:junit'
+}
+
+configurations {
+    // replaced with jcl-over-slf4j
+    all*.exclude group: 'commons-logging', module: 'commons-logging'
+    // replaced with log4j-over-slf4j
+    all*.exclude group: 'log4j', module: 'log4j'
+}
+

@@ -1,0 +1,71 @@
+[quote]
+____
+
+== 技术栈
+
+- JDK8
+- Spring-Boot
+- Spring-Security
+- Spring-JPA
+- Docker
+- Gradle
+- Freemarker
+- MySQL
+- Bootstrap
+- Ehcache
+
+*呃，就是spring全家桶*
+
+== 特性
+
+- 社区兼容性（IE9+）
+- 页面自适应布局
+- 本地登录，注册
+- 使用 `Spring-Boot` 开发
+- 权限使用 `Spring-Security` ，基于url做的权限方便配置管理
+- 使用的 `Spring-JPA` 操作数据存储
+- 使用 https://github.com/lepture/editor[editor] 作为 Markdown编辑器, 书写更方便, 还支持截图粘贴上传
+- 还增加了 https://github.com/wangfupeng1988/wangEditor[wangEditor] 作为富文本编辑器
+
+== 如何开始
+
+- `git clone https://github.com/zgqq/awebbs.git`
+- 修改配置文件 `src/main/resources/application.yml` 里的配置项
+- 创建数据库 `awebbs`
+- 运行 `AwebbsApplication.java` 里的 `main` 方法
+- 启动项目后表是自动创建的，然后将 `awebbs.sql` 导入数据库
+- 浏览器 http://localhost:8080/
+- 默认帐户 `zgqq` `123123`
+
+== 打jar包运行
+
+- `git clone https://github.com/zgqq/awebbs.git`
+- 修改配置文件 `src/main/resources/application.yml` 里的配置项
+- 创建数据库 `awebbs`
+- 运行 `mvn clean package -Dmaven.test.skip=true` 命令，生成jar包，位置在 `target/awebbs.jar`
+- 运行 `java -jar awebbs.jar` 即可启动服务
+- 启动项目后表是自动创建的，然后将 `awebbs.sql` 导入数据库
+- 浏览器 http://localhost:8080/
+- 默认帐户 `zgqq` `123123`
+
+== 插入Emoji字符问题
+
+想插入emoji到数据库里 *必须* 要更改mysql的配置文件my.cnf，这个文件的位置在哪，自行百度
+
+打开找到 [mysqld] 在下面加上
+
+[code]
+----
+[mysqld]
+character-set-client-handshake = FALSE
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+init_connect='SET NAMES utf8mb4'
+----
+
+
+*注意是必须，网上找了很多教程，设置useUnicode=true, initSQL= set names utf8mb4 等等都没用*
+
+== License
+
+MIT

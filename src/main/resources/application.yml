@@ -1,0 +1,29 @@
+spring:
+  freemarker:
+    cache: true
+  datasource:
+    url: jdbc:mysql://172.17.0.3:3306/awebbs?useSSL=false&characterEncoding=utf8
+    username: root
+    password: zgqq
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  mvc:
+    static-path-pattern: /static/**
+site:
+  name: awebbs
+  intro: <h5>属于每个人的bbs</h5><p>在这里，您可以提问，回答，分享，诉说，欢迎您的加入！</p>
+  baseUrl: http://localhost:8080/
+  staticUrl: http://localhost:8080/
+  pageSize: 20
+  uploadPath: /Users/zgqq/git/github/awebbs/target/classes/static/images/upload/
+  sections:
+    - 分享
+    - 问答
+    - 新闻
+    - 博客
+  theme: bootstrap
+  editor: markdown # 支持两种，1. markdown 2. wangeditor
+  search: true
