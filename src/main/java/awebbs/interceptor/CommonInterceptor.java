@@ -44,7 +44,7 @@ public class CommonInterceptor implements HandlerInterceptor {
             if (authentication != null) {
                 Object o = authentication.getPrincipal();
                 if (o instanceof UserDetails) {
-                    isAuthenticated = true;
+                    isAuthenhttps://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=%E8%8B%B9%E6%9E%9C%E5%BA%8F%E5%88%97%E5%8F%B7&rsv_pq=cf5cec7100098b63&rsv_t=5188vQoofPJKgDawat7rlnZBSyMOfoa8cedCr8M6m4SZvRSRm7x6k2ZZCvg&rqlang=cn&rsv_enter=1&rsv_sug3=17&rsv_sug2=0&inputT=3389&rsv_sug4=3390ticated = true;
                     modelMap.addAttribute("_principal", ((UserDetails) o).getUsername());
                     modelMap.addAttribute("_roles", ((UserDetails) o).getAuthorities());
                 }
