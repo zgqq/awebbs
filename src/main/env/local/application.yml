@@ -2,7 +2,7 @@ spring:
   freemarker:
     cache: true
   datasource:
-    url: jdbc:mysql://172.17.0.3:3306/awebbs?useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://172.17.0.4:3306/awebbs?useSSL=false&characterEncoding=utf8
     username: root
     password: zgqq
   jpa:
