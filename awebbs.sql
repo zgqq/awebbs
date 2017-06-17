@@ -68,7 +68,7 @@ VALUES
 
 INSERT INTO `awebbs_user` (`id`, `email`, `in_time`, `password`, `signature`, `url`, `username`, `avatar`, `block`, `token`)
 VALUES
-	(1,'liygheart@qq.com','2016-09-09 09:50:14','$2a$10$KkUG107R3ASTHfAHei.bweXWXgCa4cE1KhK.F0odzfE0r97aeeTXC','hello world','https://zgqq92.github.io','zgqq','http://localhost:8080/static/images/upload/avatar/default.png', 0, 'd20b9a5c-8693-41a6-8943-ddb2cb78eebd');
+	(1,'zgqjava@gmail.com','2016-09-09 09:50:14','$2a$10$KkUG107R3ASTHfAHei.bweXWXgCa4cE1KhK.F0odzfE0r97aeeTXC','hello world','https://zgqq.github.io','zgqq','http://localhost:8080/static/images/upload/avatar/default.png', 0, 'd20b9a5c-8693-41a6-8943-ddb2cb78eebd');
 
 INSERT INTO `awebbs_user_role` (`user_id`, `role_id`)
 VALUES

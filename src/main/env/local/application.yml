@@ -18,7 +18,7 @@ site:
   baseUrl: http://localhost:8080/
   staticUrl: http://localhost:8080/
   pageSize: 20
-  uploadPath: /Users/zgqq/git/github/awebbs/target/classes/static/images/upload/
+  uploadPath: /home/zgq/Tmp/awebbs/static/images/upload
   sections:
     - 分享
     - 问答
