@@ -17,6 +17,7 @@ apply plugin: 'idea'
 
 ext {
     environment = "local"
+    springbootVersion = "1.5.2.RELEASE"
 }
 
 if (hasProperty("env")) {
@@ -65,13 +66,14 @@ dependencies {
 
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
 
-    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version:'1.5.2.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version:'1.5.2.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version:'1.5.2.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version:'1.5.2.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version:'1.5.2.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.5.2.RELEASE'
-    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.2.RELEASE') 
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker'
+    compile group: 'org.springframework.boot', name: 'spring-boot-configuration-processor'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test')
 
     // Mock http interactions
     testCompile "org.springframework:spring-test"
@@ -79,13 +81,13 @@ dependencies {
 
     // Common libraries
     compile group: 'org.jetbrains', name: 'annotations', version: '13.0'
-    compile group: 'net.sf.ehcache', name: 'ehcache', version:'2.10.3'
-    compile group: 'com.google.guava', name: 'guava', version:'19.0'
-    compile group: 'org.ocpsoft.prettytime', name: 'prettytime', version:'4.0.1.Final'
-    compile group: 'org.pegdown', name: 'pegdown', version:'1.6.0'
-    compile group: 'org.jsoup', name: 'jsoup', version:'1.9.2'
+    compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.3'
+    compile group: 'com.google.guava', name: 'guava', version: '19.0'
+    compile group: 'org.ocpsoft.prettytime', name: 'prettytime', version: '4.0.1.Final'
+    compile group: 'org.pegdown', name: 'pegdown', version: '1.6.0'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.9.2'
 
-    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.2.RELEASE')
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test')
     testCompile 'org.mockito:mockito-core'
     testCompile 'junit:junit'
 }
